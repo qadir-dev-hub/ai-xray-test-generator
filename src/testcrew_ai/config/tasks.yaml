@@ -1,0 +1,70 @@
+write_test_cases:
+  description: >
+    INPUT:
+    - story: Jira user story text
+
+    You are provided with a Jira user story.
+
+    Your task is to write comprehensive functional test cases based on the story.
+
+    Requirements:
+    - Cover positive, negative, and edge cases
+    - Align all test cases with the acceptance criteria
+    - Use clear, unambiguous language
+
+    Each test case must include:
+    - Test Case ID
+    - Title
+    - Preconditions
+    - Test Steps
+    - Expected Result
+
+    Jira User Story:
+    {story}
+
+    Output the test cases in Markdown format.
+    Save the output to output/test_cases_v1.md.
+  expected_output: >
+    A Markdown file containing clear, well-structured functional test cases
+    derived from the Jira user story.
+  agent: test_case_writer
+  output_file: output/test_cases_v1.md
+
+
+review_test_cases:
+  description: >
+    INPUTS:
+    - story: Jira user story text
+
+    You are provided with:
+    - The original Jira user story
+    - A set of test cases written in output/test_cases_v1.md
+
+    Jira User Story:
+    {story}
+
+    Review the existing test cases and improve them by:
+    - Ensuring full coverage of acceptance criteria
+    - Identifying and adding missing scenarios
+    - Improving clarity and consistency
+    - Removing redundancy or ambiguity
+
+    Do NOT remove valid test cases unless necessary.
+    You may refactor, merge, or expand them where appropriate.
+
+    Output the improved test cases in Markdown format.
+    Save the output to output/test_cases_v2_reviewed.md.
+
+    After generating the final improved test cases,
+    use the "XrayCreateTestTool" to create a Manual Test
+    in Xray for each finalized test case.
+
+    Pass:
+    - summary = Test Case Title
+    - description = Full test case content
+    - project_key = "SCRUM"
+  expected_output: >
+    A reviewed and improved Markdown file containing high-quality,
+    acceptance-criteria-aligned test cases.
+  agent: test_case_reviewer
+  output_file: output/test_cases_v2_reviewed.md
