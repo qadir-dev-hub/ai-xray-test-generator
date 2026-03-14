@@ -22,7 +22,7 @@ This project uses CrewAI agents to generate software test cases and automaticall
 ### 1. Clone the repository
 
 ```
-git clone https://github.com/YOUR_USERNAME/YOUR_REPO.git
+git clone https://github.com/qadir-dev-hub/ai-xray-test-generator
 cd YOUR_REPO
 ```
 
