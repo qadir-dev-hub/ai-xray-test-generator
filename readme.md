@@ -55,6 +55,11 @@ Create Xray Cloud API credentials and set:
 * XRAY_CLIENT_ID
 * XRAY_CLIENT_SECRET
 
+Create a Jira account and set:
+
+*JIRA_EMAIL
+*JIRA_API_TOKEN
+
 ## 📚 Use Case
 
 Built as part of an exploration into Agentic AI for Quality Engineering.
